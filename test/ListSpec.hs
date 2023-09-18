@@ -30,6 +30,7 @@ rubric = distribute $ do
   dcriterion "replicate" . passOrFail $ do
     it "creates correct empty list" $ do
       List.replicate 0 'a' @?= []
+      List.replicate (-5) 'a' @?= []
 
     it "creates correct finite list" $ do
       List.replicate 3 'a' @?= replicate 3 'a'

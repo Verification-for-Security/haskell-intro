@@ -62,4 +62,6 @@ tests:
     - hspec-core
     - HUnit
     - hrubric
+    - emit-grade
+    - transformers
     - ansi-terminal
