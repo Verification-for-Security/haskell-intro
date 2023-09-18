@@ -8,17 +8,16 @@ to understand and write the harder assignments later in the course.
 ### GHCup
 
 Install GHCup by following the [installation instructions](https://www.haskell.org/ghcup/) 
-for your operating system. Do make sure to allow GHCup to hook into stack,
-as we will be using stack to build the assignments. To check if the 
-installation went succesful, the following command should give a version 
-number.
+for your operating system. Do make sure to allow GHCup to hook into stack, as we
+will be using stack to build the assignments. To check if the  installation went
+succesful, the following command should give a version  number.
 
 ```sh
 $ ghcup --version
 ```
 
-Make sure this is the latest version of GHCup. If this is not the case, you
-can upgrade to the latest version via
+Make sure this is the latest version of GHCup. If this is not the case, you can
+upgrade to the latest version via
 
 ```sh
 $ ghcup upgrade
@@ -31,11 +30,11 @@ working with the package manager Stack. To install this, you can simply run:
 $ ghcup install stack
 ```
 
-We also recommend that you install the Haskell Language Server (HLS). If your
-code editor supports language servers (which most of them do), this will 
+We also recommend that you install the Haskell Language Server (HLS). If
+your code editor supports language servers (which most of them do), this will
 display errors or useful tips to improve your code! It also allows you to run
-some additional commands when editing, for example, jumping to a definition of
-a piece of code. You can install it via the following command.
+some additional commands when editing, for example, jumping to a definition of a
+piece of code. You can install it via the following command.
 
 ```sh
 $ ghcup install hls
@@ -49,19 +48,19 @@ their latest versions.
 $ ghcup tui
 ```
 
-It should be the case that stack will automatically install the GHC version 
-specified by the project when trying to compile it. If this doesn't work you 
-could also manually install specific GHC versions, either through this menu, 
-or through the command line.
+It should be the case that stack will automatically install the GHC version
+specified by the project when trying to compile it. If this doesn't work you
+could also manually install specific GHC versions, either through this menu,  or
+through the command line.
 
 ### Git
 
 Install Git by following the [installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 for your operating system.
 
-You may clone this assignment through git. Make sure to run this command
-in the directory where you would like this project to exist. You can find
-the `<directory-path>` in the top right of this repository, under `Code`.
+You may clone this assignment through git. Make sure to run this command in
+the directory where you would like this project to exist. You can find the
+`<directory-path>` in the top right of this repository, under `Code`.
 
 ```sh
 $ git clone <directory-path>
@@ -83,6 +82,16 @@ $ stack test
 
 This will run the entire test infrastructure on your code. If all went well up
 to this point, this will give you a list of functions that failed their tests.
+
+Individual tests may be run by matching on the test name. The following example
+will run the tests for `head`. If you want to run a group of test, you may match
+on the group name. To illustrate, you could replace `head` with `List` in the
+example to all run all the list tests.
+
+```sh
+$ stack test --ta="--match head"
+  
+```
 
 There are many other ways to build and/or run your code. One recommended way 
 would be to use GHCi. This is a Read-Eval-Print-Loop (REPL) that allows you
